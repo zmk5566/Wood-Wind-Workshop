@@ -29,8 +29,7 @@ Additional Material:  Reeds(made of dried cane)
 
 Steps: You have to tie the reed onto a mouthpiece and the viberation of the reed makes the sound
 
-![Screenshot from 2025-03-13 18-17-07](https://github.com/user-attachments/assets/c5481f13-a972-4ed4-9d35-4f4b83b5fa92)
-
+![images](https://github.com/user-attachments/assets/4c28124a-8d3c-4323-83e7-bfc4fd7258df)
 
 
 ### Bamboo Flute 
