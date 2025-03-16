@@ -5,22 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Woodwind Types & DIY Guide 🎶</title>
     <style>
-        /* Y2K-inspired styles from poster.html */
-body {
-    margin: 0;
-    padding: 0;
-    background: 
-        linear-gradient(45deg, 
-            rgba(255, 0, 119, 0.3), 
-            rgba(0, 255, 255, 0.3)),
-        url('static/img/poster_base.jpeg') no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
-    position: relative;
-    font-family: 'Arial', 'Microsoft JhengHei', sans-serif;
-    color: #fff;
-    overflow: auto; /* Allow page scrolling */
-}
+        body {
+            margin: 0;
+            padding: 0;
+            background: 
+                linear-gradient(45deg, 
+                    rgba(255, 0, 119, 0.3), 
+                    rgba(0, 255, 255, 0.3)),
+                url('static/img/poster_base.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            position: relative;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            overflow: auto;
+        }
 
         body::after {
             content: '';
@@ -40,20 +39,43 @@ body {
             animation: scan 8s linear infinite;
         }
 
-.content {
-    position: relative;
-    margin: 80px auto; /* Center horizontally */
-    max-width: 600px;
-    background: rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    border-radius: 12px;
-    backdrop-filter: blur(6px);
-    border: 2px solid rgba(255, 0, 119, 0.5);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
-    max-height: 80vh;
-    overflow-y: auto; /* Scrollable content box */
-    overflow-x: hidden;
-}
+
+    .menu {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 0;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        z-index: 1000;
+    }
+
+    .menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        text-shadow: 0 0 5px #ff00ff;
+    }
+
+    .menu a:hover {
+        text-shadow: 0 0 15px #ff00ff;
+    }
+
+        .content {
+            position: relative;
+            margin: 80px auto;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(6px);
+            border: 2px solid rgba(255, 0, 119, 0.5);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+            max-height: 80vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
 
         h1 {
             font-size: 3rem;
@@ -109,13 +131,19 @@ body {
     </style>
 </head>
 <body>
+    <nav class="menu">
+        <a href="index.html">Poster</a>
+        <a href="woodwinds.html">Woodwinds</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
+
     <div class="content">
         <h1>Types of Woodwinds & DIY Guide 🌿</h1>
 
         <!-- Overtone Flute Section -->
         <div class="instrument">
             <h2>Overtone Flute 🎶</h2>
-            <div>Materials: Hollowed bamboo/PVC pipe + Wooden block</div>
+            <div>Base Material: Hollowed bamboo/PVC pipe + Wooden block</div>
             <ul>
                 <li>1. Prepare the pipe</li>
                 <li>2. Cut the fipple</li>
@@ -127,7 +155,7 @@ body {
         <!-- Reed-Based Woodwind Section -->
         <div class="instrument">
             <h2>Reed-Based Woodwind 🍃</h2>
-            <div>Materials: Dried cane reeds</div>
+            <div>Base Material: Dried cane reeds</div>
             <ul>
                 <li>1. Tie reed to mouthpiece</li>
                 <li>2. Use reed vibration for sound production</li>
@@ -138,7 +166,7 @@ body {
         <!-- Bamboo Flute Section -->
         <div class="instrument">
             <h2>Bamboo Flute 🌿</h2>
-            <div>Materials: Tape (similar to reed but different vibration method)</div>
+            <div>Base Material: Tape (similar to reed but different vibration method)</div>
             <ul>
                 <li>1. Measure hole spacing</li>
                 <li>2. Mark and drill holes</li>
