@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woodwind Types & DIY Guide 🎶</title>
+    <style>
+        /* Y2K-inspired styles from poster.html */
+body {
+    margin: 0;
+    padding: 0;
+    background: 
+        linear-gradient(45deg, 
+            rgba(255, 0, 119, 0.3), 
+            rgba(0, 255, 255, 0.3)),
+        url('static/img/poster_base.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    font-family: 'Arial', 'Microsoft JhengHei', sans-serif;
+    color: #fff;
+    overflow: auto; /* Allow page scrolling */
+}
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15) 0px,
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            animation: scan 8s linear infinite;
+        }
+
+.content {
+    position: relative;
+    margin: 80px auto; /* Center horizontally */
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    border: 2px solid rgba(255, 0, 119, 0.5);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    max-height: 80vh;
+    overflow-y: auto; /* Scrollable content box */
+    overflow-x: hidden;
+}
+
+        h1 {
+            font-size: 3rem;
+            color: #ff00ff;
+            text-shadow: 0 0 15px #ff00ff,
+                         0 0 30px #00ffff;
+            animation: glitch 2s infinite;
+        }
+
+        .instrument {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .instrument::before {
+            content: '🛠️';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            font-size: 2rem;
+            color: #00ffff;
+            animation: pulse 2s infinite;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 1.5rem;
+            color: #ffffffb3;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-3px, 3px); }
+            40% { transform: translate(-3px, -3px); }
+            60% { transform: translate(3px, 3px); }
+            80% { transform: translate(3px, -3px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Types of Woodwinds & DIY Guide 🌿</h1>
+
+        <!-- Overtone Flute Section -->
+        <div class="instrument">
+            <h2>Overtone Flute 🎶</h2>
+            <div>Materials: Hollowed bamboo/PVC pipe + Wooden block</div>
+            <ul>
+                <li>1. Prepare the pipe</li>
+                <li>2. Cut the fipple</li>
+                <li>3. (Optional) Add extra drilling holes! 🛠️</li>
+            </ul>
+            <img src="static/img/overtune-flute.png" alt="Overtone Flute" style="width:100%; opacity:0.8; border-radius:8px;">
+        </div>
+
+        <!-- Reed-Based Woodwind Section -->
+        <div class="instrument">
+            <h2>Reed-Based Woodwind 🍃</h2>
+            <div>Materials: Dried cane reeds</div>
+            <ul>
+                <li>1. Tie reed to mouthpiece</li>
+                <li>2. Use reed vibration for sound production</li>
+            </ul>
+            <img src="static/img/racketts.png" alt="Reed Woodwind" style="width:100%; opacity:0.8; border-radius:8px;">
+        </div>
+
+        <!-- Bamboo Flute Section -->
+        <div class="instrument">
+            <h2>Bamboo Flute 🌿</h2>
+            <div>Materials: Tape (similar to reed but different vibration method)</div>
+            <ul>
+                <li>1. Measure hole spacing</li>
+                <li>2. Mark and drill holes</li>
+                <li>3. Add tape for tuning! 🎀</li>
+            </ul>
+            <img src="static/img/bamboo_flute.png" alt="Bamboo Flute" style="width:100%; opacity:0.8; border-radius:8px;">
+        </div>
+    </div>
+</body>
+</html>
