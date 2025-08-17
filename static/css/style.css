@@ -1,0 +1,299 @@
+/* General Body and Background Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background:
+        linear-gradient(45deg,
+            rgba(255, 0, 119, 0.3),
+            rgba(0, 255, 255, 0.3)),
+        url('../img/poster_base.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    font-family: 'Arial', 'Microsoft JhengHei', sans-serif;
+    color: #fff;
+    overflow-y: auto;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15) 0px,
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    animation: scan 8s linear infinite;
+}
+
+/* Navigation Menu */
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    z-index: 1000;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px #ff00ff, 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.menu a:hover {
+    text-shadow: 0 0 15px #ff00ff;
+}
+
+/* Poster Page (index.html) Content */
+.poster-content {
+    position: absolute;
+    bottom: 80px;
+    left: 40px;
+    max-width: 450px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 0, 119, 0.3);
+}
+
+.title {
+    font-size: 3.2rem;
+    margin: 0 0 0.8rem;
+    line-height: 1.1;
+    animation: glitch 2s infinite;
+    position: relative;
+}
+
+.title .www {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff,
+                 0 0 20px #ff00ff,
+                 0 0 30px #ff00ff;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    margin: 0 0 1.2rem;
+    line-height: 1.3;
+    color: #00ffff;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.7), 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.datetime {
+    font-size: 1.6rem;
+    margin: 0.5rem 0;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.hosts {
+    font-size: 1.3rem;
+    margin: 1rem 0 0;
+    opacity: 0.9;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.supporter {
+    font-size: 1.1rem;
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    opacity: 0.8;
+    line-height: 1.4;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+
+/* Main Content Pages (gallery, woodwinds, contact) */
+.main-content {
+    position: relative;
+    margin: 80px auto;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    border: 2px solid rgba(255, 0, 119, 0.5);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.main-content h1 {
+    font-size: 3rem;
+    color: #ff00ff;
+    text-shadow: 0 0 15px #ff00ff,
+                 0 0 30px #00ffff;
+    animation: glitch 2s infinite;
+}
+
+.main-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+}
+
+.main-content img:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+/* Instrument specific styles from woodwinds.html */
+.instrument {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    position: relative;
+}
+
+.instrument::before {
+    content: '🛠️';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    font-size: 2rem;
+    color: #00ffff;
+    animation: pulse 2s infinite;
+}
+
+.instrument ul {
+    list-style: none;
+    padding-left: 1.5rem;
+    color: #ffffffb3;
+}
+
+/* Animations */
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+
+/* Media Queries */
+@media (prefers-reduced-motion: reduce) {
+    .title, .main-content h1, body::after, .instrument::before {
+        animation: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .poster-content {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        max-width: none;
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+    }
+
+    .datetime {
+        font-size: 1.2rem;
+    }
+
+    .hosts {
+        font-size: 1rem;
+    }
+
+    .supporter {
+        left: 20px;
+        bottom: 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .poster-content {
+        text-align: center;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .datetime {
+        font-size: 1rem;
+    }
+
+    .hosts {
+        font-size: 0.9rem;
+    }
+
+    .supporter {
+        text-align: center;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .datetime {
+        font-size: 0.9rem;
+    }
+
+    .hosts {
+        font-size: 0.8rem;
+    }
+
+    .supporter {
+        font-size: 0.7rem;
+    }
+}
